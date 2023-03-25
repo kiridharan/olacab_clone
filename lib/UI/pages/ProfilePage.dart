@@ -49,55 +49,59 @@ class _ProfilePage extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          color: Colors.white,
-          // elevation: 0,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const ProfileTopWidget(),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  CardCus(
-                    "Help",
-                    Icon(Icons.help_outline_outlined),
-                  ),
-                  CardCus(
-                    "Wallet",
-                    Icon(Icons.wallet),
-                  ),
-                  CardCus(
-                    "Trips",
-                    Icon(Icons.watch_later_rounded),
-                  )
-                ],
-              ),
-              const PieChartCustom(),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 10,
-                color: Colors.grey.shade200,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .5,
-                child: ListView.builder(
-                  itemCount: _nav.length,
-                  itemBuilder: (context, index) {
-                    return CustButton(
-                      text: _nav[index]["text"].toString(),
-                      icon: _nav[index]["Icon"] as Icon,
-                      onPressed: () => _nav[index]["onpress"]!,
-                    );
-                  },
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            color: Colors.white,
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            // elevation: 0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const ProfileTopWidget(),
+                const SizedBox(
+                  height: 10,
                 ),
-              )
-            ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    CardCus(
+                      "Help",
+                      Icon(Icons.help_outline_outlined),
+                    ),
+                    CardCus(
+                      "Wallet",
+                      Icon(Icons.wallet),
+                    ),
+                    CardCus(
+                      "Trips",
+                      Icon(Icons.watch_later_rounded),
+                    )
+                  ],
+                ),
+                const PieChartCustom(),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 10,
+                  color: Colors.grey.shade200,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .5,
+                  child: ListView.builder(
+                    itemCount: _nav.length,
+                    itemBuilder: (context, index) {
+                      return CustButton(
+                        text: _nav[index]["text"].toString(),
+                        icon: _nav[index]["Icon"] as Icon,
+                        onPressed: () => _nav[index]["onpress"]!,
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

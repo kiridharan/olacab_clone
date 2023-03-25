@@ -51,7 +51,7 @@ class ProfileTopWidget extends StatelessWidget {
             ],
           ),
           CircleAvatar(
-            radius: MediaQuery.of(context).size.width * 0.15,
+            radius: MediaQuery.of(context).size.width * 0.1,
             backgroundImage: const AssetImage("assets/images/user.png"),
             backgroundColor: const Color.fromARGB(255, 243, 243, 243),
           )

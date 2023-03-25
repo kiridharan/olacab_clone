@@ -19,8 +19,8 @@ class CustButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 75,
-        padding: const EdgeInsets.all(15.0),
+        height: 40,
+        padding: const EdgeInsets.all(9.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.5),
@@ -29,7 +29,7 @@ class CustButton extends StatelessWidget {
           children: [
             icon,
             const SizedBox(
-              width: 15,
+              width: 30,
             ),
             Text(text,
                 textAlign: TextAlign.center,

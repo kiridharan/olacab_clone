@@ -11,7 +11,7 @@ class CardCus extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
-        width: 100,
+        width: MediaQuery.of(context).size.width / 3.7,
         height: 100,
         padding: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
