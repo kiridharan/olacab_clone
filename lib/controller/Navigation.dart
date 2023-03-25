@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../pages/Activity.dart';
-import '../pages/HomePage.dart';
-import '../pages/ProfilePage.dart';
-
+import '../UI/pages/Activity.dart';
+import '../UI/pages/HomePage.dart';
+import '../UI/pages/ProfilePage.dart';
 
 /// This Widget is the main application widget.
 
-
 class Navigation extends StatefulWidget {
-  Navigation ({Key? key}) : super(key: key);
+  Navigation({Key? key}) : super(key: key);
 
   @override
   _NavigationBarState createState() => _NavigationBarState();
 }
 
-class _NavigationBarState extends State<Navigation > {
+class _NavigationBarState extends State<Navigation> {
   int _selectedIndex = 0;
-  final screens=const [
+  final screens = const [
     HomePage(),
     Activity(),
     ProfilePage(),
@@ -36,20 +34,25 @@ class _NavigationBarState extends State<Navigation > {
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, color:Colors.grey),
-                activeIcon: Icon(Icons.home, color:Colors.black),
+                icon: Icon(Icons.home, color: Colors.grey),
+                activeIcon: Icon(Icons.home, color: Colors.black),
                 label: 'Home',
-                backgroundColor: Colors.white
-            ),
+                backgroundColor: Colors.white),
             BottomNavigationBarItem(
-                icon: Icon(Icons.mark_as_unread_sharp, color:Colors.grey),
-                activeIcon: Icon(Icons.mark_as_unread_sharp, color:Colors.black),
+                icon: Icon(Icons.mark_as_unread_sharp, color: Colors.grey),
+                activeIcon:
+                    Icon(Icons.mark_as_unread_sharp, color: Colors.black),
                 label: 'Activity',
-                backgroundColor: Colors.white
-            ),
+                backgroundColor: Colors.white),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person,color: Colors.grey,),
-              activeIcon:Icon(Icons.person,color: Colors.black,),
+              icon: Icon(
+                Icons.person,
+                color: Colors.grey,
+              ),
+              activeIcon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
               label: 'Profile',
               backgroundColor: Colors.white,
             ),
@@ -61,8 +64,7 @@ class _NavigationBarState extends State<Navigation > {
           showUnselectedLabels: true,
           iconSize: 24,
           onTap: _onItemTapped,
-          elevation: 5
-      ),
+          elevation: 5),
     );
   }
 }

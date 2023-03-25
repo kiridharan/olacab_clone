@@ -1,13 +1,10 @@
-import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svgimage;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:untitled/controller/GoogleSignInApi.dart';
-import '../controller/Navigation.dart';
-import 'HomePage.dart';
-import 'Loading.dart';
+import '../../controller/Navigation.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -40,7 +37,7 @@ class _MyLoginState extends State<LoginPage> {
               child: Padding(
                 padding: EdgeInsets.all(0),
                 child: Image(
-                  image: AssetImage('lib/images/car.png'),
+                  image: AssetImage('assets/images/car.png'),
                 ),
               ),
             ),
@@ -112,7 +109,7 @@ class _MyLoginState extends State<LoginPage> {
                               color: Colors.white,
                               elevation: 0,
                               child: Image(
-                                image: svgimage.Svg('lib/images/google.svg'),
+                                image: svgimage.Svg('assets/images/google.svg'),
                                 width: 24,
                               ),
                             )

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/ProfilePage.dart';
+import 'package:untitled/UI/pages/ProfilePage.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class _SettingPage extends State<SettingsPage> {
                         CircleAvatar(
                           radius: MediaQuery.of(context).size.width * 0.08,
                           backgroundImage:
-                              const AssetImage("lib/images/user.png"),
+                              const AssetImage("assets/images/user.png"),
                           backgroundColor:
                               const Color.fromARGB(255, 243, 243, 243),
                         ),

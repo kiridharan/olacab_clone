@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/pages/HomePage.dart';
+import 'package:untitled/UI/pages/ProfilePage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -10,7 +10,7 @@ void main() {
     ),
     initialRoute: 'LoginPage',
     routes: {
-      'LoginPage': (context) => const HomePage(),
+      'LoginPage': (context) => const ProfilePage(),
     },
   ));
 }
