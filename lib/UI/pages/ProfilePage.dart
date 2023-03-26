@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/UI/components/activity/custom_button_profile.dart';
-import 'package:untitled/UI/components/activity/custom_list_widget_card.dart';
-import 'package:untitled/UI/components/activity/custom_top_part_profile.dart';
-import 'package:untitled/UI/components/activity/piechart_profile.dart';
+import 'package:untitled/UI/components/profile/custom_button_profile.dart';
+import 'package:untitled/UI/components/profile/custom_list_widget_card.dart';
+import 'package:untitled/UI/components/profile/custom_top_part_profile.dart';
+import 'package:untitled/UI/components/profile/piechart_profile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -54,7 +54,7 @@ class _ProfilePage extends State<ProfilePage> {
           child: Container(
             color: Colors.white,
             width: double.infinity,
-            height: MediaQuery.of(context).size.height*0.95,
+            height: MediaQuery.of(context).size.height * 0.95,
             // elevation: 0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
