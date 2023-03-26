@@ -1,5 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svgimage;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
+import 'package:syncfusion_flutter_maps/maps.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +20,37 @@ class _HomePage extends State<HomePage> {
     // TODO: implement initState
     super.initState();
   }
+
+
+
+  Future<LocationData?> _currentLocation() async {
+    bool serviceEnabled;
+    PermissionStatus permissionGranted;
+
+    Location location = new Location();
+
+    serviceEnabled = await location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await location.requestService();
+      if (!serviceEnabled) {
+        return null;
+      }
+    }
+
+    permissionGranted = await location.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      permissionGranted = await location.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
+        return null;
+      }
+    }
+    return await location.getLocation();
+  }
+
+  final Completer<GoogleMapController> _controller =
+  Completer<GoogleMapController>();
+
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -557,7 +594,7 @@ class _HomePage extends State<HomePage> {
                 ),
               ),
               Card(
-                margin:
+                 margin:
                     const EdgeInsets.only(left: 5, right: 5, bottom: 0, top: 5),
                 elevation: 1,
                 shape: RoundedRectangleBorder(
@@ -566,6 +603,29 @@ class _HomePage extends State<HomePage> {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.25,
+                  child:FutureBuilder<LocationData?>(
+                    future: _currentLocation(),
+                    builder: (BuildContext context, AsyncSnapshot<dynamic> snapchat){
+                      if(snapchat.hasData){
+                        final LocationData currentLocation = snapchat.data;
+                        return  GoogleMap(
+                          mapType: MapType.hybrid,
+                          initialCameraPosition: CameraPosition(
+                            target: LatLng(currentLocation.latitude!, currentLocation.longitude!),
+                            zoom: 19.151926040649414,
+                          ),
+                          myLocationButtonEnabled: true,
+                          onMapCreated: (GoogleMapController controller) {
+                            _controller.complete(controller);
+                          },
+                        );
+                      }
+                      else{
+                        return Scaffold();
+                      }
+                    },
+                  ),
+
                 ),
               )
             ],

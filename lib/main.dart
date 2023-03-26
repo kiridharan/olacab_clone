@@ -10,7 +10,7 @@ void main() {
     theme: ThemeData(
       fontFamily: 'Nunito',
     ),
-    initialRoute: 'profile',
+    initialRoute: 'loginPage',
     routes: {
       'loginPage': (context) => const LoginPage(),
       'activity': (context) => const Activity(),

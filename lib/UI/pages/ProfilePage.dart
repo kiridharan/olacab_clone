@@ -54,7 +54,7 @@ class _ProfilePage extends State<ProfilePage> {
           child: Container(
             color: Colors.white,
             width: double.infinity,
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height*0.95,
             // elevation: 0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -91,6 +91,7 @@ class _ProfilePage extends State<ProfilePage> {
                   height: MediaQuery.of(context).size.height * .5,
                   child: ListView.builder(
                     itemCount: _nav.length,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                       return CustButton(
                         text: _nav[index]["text"].toString(),
