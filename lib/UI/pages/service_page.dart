@@ -3,11 +3,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 
 import 'package:untitled/UI/components/activity/list_row_card.dart';
 import 'package:untitled/UI/components/activity/package_custom.dart';
 import 'package:untitled/UI/components/activity/promo_card.dart';
+import 'package:untitled/UI/components/maps_components.dart';
 import 'package:untitled/controller/activity/activity_utils.dart';
 
 class ServicePage extends StatefulWidget {
@@ -114,41 +114,7 @@ class _ServicePage extends State<ServicePage> {
                   child: Text("Around You"),
                 ),
               ),
-              Card(
-                margin:
-                    const EdgeInsets.only(left: 5, right: 5, bottom: 0, top: 5),
-                elevation: 1,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-                color: const Color.fromARGB(225, 219, 219, 219),
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.25,
-                  child: FutureBuilder<LocationData?>(
-                    future: _activityContoller.currentLocation(),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<dynamic> snapchat) {
-                      if (snapchat.hasData) {
-                        final LocationData currentLocation = snapchat.data;
-                        return GoogleMap(
-                          mapType: MapType.hybrid,
-                          initialCameraPosition: CameraPosition(
-                            target: LatLng(currentLocation.latitude!,
-                                currentLocation.longitude!),
-                            zoom: 19.151926040649414,
-                          ),
-                          myLocationButtonEnabled: true,
-                          onMapCreated: (GoogleMapController controller) {
-                            _controller.complete(controller);
-                          },
-                        );
-                      } else {
-                        return const Scaffold();
-                      }
-                    },
-                  ),
-                ),
-              )
+              const MapsCustomview(),
             ],
           ),
         )),
