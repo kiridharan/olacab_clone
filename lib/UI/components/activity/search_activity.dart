@@ -20,24 +20,27 @@ class SearchBar extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * .06,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Icon(Icons.search),
-                Container(
-                  margin: const EdgeInsets.only(left: 10, top: 10),
-                  width: MediaQuery.of(context).size.width * .6,
-                  height: 20,
-                  child: TextFormField(
-                    controller: controller,
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Where To?',
+
+                   Container(
+                    margin: const EdgeInsets.only( top: 10),
+                     width: MediaQuery.of(context).size.width * .6,
+                    height: 20,
+                    child: TextFormField(
+                      controller: controller,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Where To?',
+                      ),
                     ),
                   ),
-                ),
+
               ],
             ),
             Flexible(
@@ -47,8 +50,8 @@ class SearchBar extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(60)),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  height: MediaQuery.of(context).size.height * .040,
+                  width: 80,
+                  height: 30,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: const [

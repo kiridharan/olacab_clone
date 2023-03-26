@@ -16,7 +16,7 @@ class CustomeCardHome extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.white,
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.20,
+        width: MediaQuery.of(context).size.width * 0.19,
         height: MediaQuery.of(context).size.height * 0.12,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

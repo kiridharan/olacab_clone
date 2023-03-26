@@ -34,7 +34,7 @@ class _CoruselOldState extends State<CoruselOld> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.only(left: 20),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.start,

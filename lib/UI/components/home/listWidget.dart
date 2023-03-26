@@ -36,8 +36,8 @@ class ListWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "KCG COllege of Technology",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    "KCG College of Technology",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   Text(
                     "karapakkam, Chennai",

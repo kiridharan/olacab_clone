@@ -32,8 +32,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_polyline_points: ^1.0.0
-  flutter_svg: ^2.0.4
-  flutter_svg_provider: ^1.0.3
+  flutter_svg:
+  flutter_svg_provider:
   geolocator: ^9.0.2
   get: ^4.6.5
   google_maps_flutter: null

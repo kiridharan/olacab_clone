@@ -27,58 +27,66 @@ class PieChartCustom extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "Safety chekup",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
+            Container(
+              width: MediaQuery.of(context).size.width * .5,
+            //  color: Colors.black,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Safety chekup",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
                   ),
-                ),
-                // Spacer(),
-                Text(
-                  "Boost your safety profile by Turning on \nAdditional feature",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w300,
-                    // fontSize: 18,
+                  // Spacer(),
+                  Text(
+                    "Boost your safety profile by Turning on Additional feature",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w300,
+                      // fontSize: 18,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const Spacer(),
-            PieChart(
-              dataMap: const {
-                "Completed": 1,
-                "Pending": 2,
-              },
-              animationDuration: const Duration(milliseconds: 800),
-              chartLegendSpacing: 32,
-              chartRadius: MediaQuery.of(context).size.width / 3.2,
-              colorList: const [
-                Colors.blue,
-                Colors.white,
-              ],
-              initialAngleInDegree: 0,
-              chartType: ChartType.ring,
-              chartValuesOptions: const ChartValuesOptions(
-                showChartValueBackground: false,
-                showChartValues: false,
-                showChartValuesInPercentage: false,
-                showChartValuesOutside: false,
-              ),
-              ringStrokeWidth: 8,
-              centerText: "1/3",
-              legendOptions: const LegendOptions(
-                showLegendsInRow: false,
-                showLegends: false,
-                legendShape: BoxShape.circle,
-                legendTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
+            Container(
+              width: 70,
+              height: 70,
+              child: PieChart(
+                dataMap: const {
+                  "Completed": 1,
+                  "Pending": 2,
+                },
+                animationDuration: const Duration(milliseconds: 800),
+                chartLegendSpacing: 32,
+                chartRadius: MediaQuery.of(context).size.width / 3.2,
+                colorList: const [
+                  Colors.blue,
+                  Colors.white,
+                ],
+                initialAngleInDegree: 0,
+                chartType: ChartType.ring,
+                chartValuesOptions: const ChartValuesOptions(
+                  showChartValueBackground: false,
+                  showChartValues: false,
+                  showChartValuesInPercentage: false,
+                  showChartValuesOutside: false,
+                ),
+                ringStrokeWidth: 8,
+                centerText: "1/3",
+                legendOptions: const LegendOptions(
+                  showLegendsInRow: false,
+                  showLegends: false,
+                  legendShape: BoxShape.circle,
+                  legendTextStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             )

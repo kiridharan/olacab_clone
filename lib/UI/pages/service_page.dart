@@ -79,14 +79,19 @@ class _ServicePage extends State<ServicePage> {
                   CusPackageCard(),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomeCardHome(title: "Rentals"),
-                  CustomeCardHome(title: "Reserve"),
-                  CustomeCardHome(title: "Travel"),
-                  CustomeCardHome(title: "Intercity"),
-                ],
+              Flexible(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomeCardHome(title: "Rentals"),
+                      CustomeCardHome(title: "Reserve"),
+                      CustomeCardHome(title: "Travel"),
+                      CustomeCardHome(title: "Intercity"),
+                    ],
+                  ),
+                ),
               ),
 
               // const ListUitl(),
