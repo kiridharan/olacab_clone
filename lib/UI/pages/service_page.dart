@@ -10,14 +10,14 @@ import 'package:untitled/UI/components/activity/package_custom.dart';
 import 'package:untitled/UI/components/activity/promo_card.dart';
 import 'package:untitled/controller/activity/activity_utils.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class ServicePage extends StatefulWidget {
+  const ServicePage({Key? key}) : super(key: key);
   @override
   // ignore: library_private_types_in_public_api
-  _HomePage createState() => _HomePage();
+  _ServicePage createState() => _ServicePage();
 }
 
-class _HomePage extends State<HomePage> {
+class _ServicePage extends State<ServicePage> {
   final ActivityContoller _activityContoller = ActivityContoller();
 
   final Completer<GoogleMapController> _controller =
@@ -25,7 +25,6 @@ class _HomePage extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     if (mounted) {
       _activityContoller;
       _controller;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svgimage;
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomeCardHome extends StatelessWidget {
   String title;
@@ -17,6 +17,7 @@ class CustomeCardHome extends StatelessWidget {
       color: Colors.white,
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.20,
+        height: MediaQuery.of(context).size.height * 0.12,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -25,13 +26,12 @@ class CustomeCardHome extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15)),
               elevation: 0,
               color: Colors.grey.shade200,
-              child: const Padding(
-                padding: EdgeInsets.all(0),
-                child: Image(
-                  image: svgimage.Svg("assets/images/lam.svg"),
-                  fit: BoxFit.fitWidth,
-                  width: 90,
-                  height: 70,
+              child: Padding(
+                padding: const EdgeInsets.all(0),
+                child: SvgPicture.asset(
+                  "assets/images/lam.svg",
+                  height: 60,
+                  width: 50,
                 ),
               ),
             ),

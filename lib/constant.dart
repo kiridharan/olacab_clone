@@ -1,4 +1,4 @@
-// homepage card width and height
+// ServicePage card width and height
 
 // Path: lib/constant.dart
 

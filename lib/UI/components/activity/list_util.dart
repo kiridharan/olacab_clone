@@ -23,7 +23,7 @@ class ListUitl extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromARGB(225, 219, 219, 219),
                   borderRadius: BorderRadius.circular(100)),
-              child: const Icon(Icons.star),
+              child: const Icon(Icons.location_city),
             ),
             Text(
               title,

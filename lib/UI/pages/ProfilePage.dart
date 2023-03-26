@@ -15,7 +15,7 @@ class _ProfilePage extends State<ProfilePage> {
   @override
   void initState() {
     _nav;
-    // TODO: need to add route to the list
+
     super.initState();
   }
 

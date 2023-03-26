@@ -13,7 +13,6 @@ class LoadingPage extends StatefulWidget {
 class LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     startTimer();
   }

@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/UI/pages/home_page.dart';
 
 import '../UI/pages/Activity.dart';
-import '../UI/pages/HomePage.dart';
+import '../UI/pages/service_page.dart';
 import '../UI/pages/ProfilePage.dart';
 
 /// This Widget is the main application widget.
 
 class Navigation extends StatefulWidget {
-  Navigation({Key? key}) : super(key: key);
+  const Navigation({Key? key}) : super(key: key);
 
   @override
-  _NavigationBarState createState() => _NavigationBarState();
+  _NavigationState createState() => _NavigationState();
 }
 
-class _NavigationBarState extends State<Navigation> {
+class _NavigationState extends State<Navigation> {
   int _selectedIndex = 0;
   final screens = const [
     HomePage(),
+    ServicePage(),
     Activity(),
     ProfilePage(),
   ];
@@ -34,10 +36,17 @@ class _NavigationBarState extends State<Navigation> {
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, color: Colors.grey),
-                activeIcon: Icon(Icons.home, color: Colors.black),
-                label: 'Home',
-                backgroundColor: Colors.white),
+              icon: Icon(Icons.home, color: Colors.grey),
+              activeIcon: Icon(Icons.home, color: Colors.black),
+              label: 'Home',
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search, color: Colors.grey),
+              activeIcon: Icon(Icons.menu_sharp, color: Colors.black),
+              label: 'Search',
+              backgroundColor: Colors.white,
+            ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.mark_as_unread_sharp, color: Colors.grey),
                 activeIcon:

@@ -3,8 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svgimage;
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:untitled/controller/GoogleSignInApi.dart';
-import '../../controller/Navigation.dart';
+import 'package:untitled/controller/google_signin_api_custom.dart';
+
+import '../../controller/navigation.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,7 +18,6 @@ class LoginPage extends StatefulWidget {
 class _MyLoginState extends State<LoginPage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -121,9 +121,9 @@ class _MyLoginState extends State<LoginPage> {
                       //
                       GoogleSignInAccount? user;
                       if (Platform.isAndroid) {
-                        user = await GoogleSignInApi.login();
+                        user = await GoogleSignInApiCusotom.login();
                       } else if (Platform.isIOS) {
-                        user = await GoogleSignInApi.login();
+                        user = await GoogleSignInApiCusotom.login();
                       }
 
                       if (user != null) {
