@@ -42,9 +42,9 @@ class _NavigationState extends State<Navigation> {
               backgroundColor: Colors.white,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search, color: Colors.grey),
+              icon: Icon(Icons.menu_sharp, color: Colors.grey),
               activeIcon: Icon(Icons.menu_sharp, color: Colors.black),
-              label: 'Search',
+              label: 'Services',
               backgroundColor: Colors.white,
             ),
             BottomNavigationBarItem(

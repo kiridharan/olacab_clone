@@ -15,11 +15,11 @@ void main() {
       fontFamily: 'Nunito',
     ),
     // TODO - Add a login route in production .
-    initialRoute: 'login',
+    initialRoute: 'loginPage',
     routes: {
       'home': (context) => const HomePage(),
       'navigation': (context) => const Navigation(),
-      'home': (context) => const ServicePage(),
+      'service': (context) => const ServicePage(),
       'loginPage': (context) => const LoginPage(),
       'activity': (context) => const Activity(),
       'profile': (context) => const ProfilePage(),
