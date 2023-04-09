@@ -5,6 +5,7 @@ import 'package:untitled/UI/pages/home_page.dart';
 import 'package:untitled/UI/pages/service_page.dart';
 
 import 'package:untitled/UI/pages/ProfilePage.dart';
+import 'package:untitled/UI/pages/settings.dart';
 import 'package:untitled/controller/navigation.dart';
 
 void main() {
@@ -15,14 +16,15 @@ void main() {
       fontFamily: 'Nunito',
     ),
     // TODO - Add a login route in production .
-    initialRoute: 'loginPage',
+    initialRoute: 'login',
     routes: {
-      'home': (context) => const HomePage(),
+      '/': (context) => const HomePage(),
       'navigation': (context) => const Navigation(),
       'service': (context) => const ServicePage(),
-      'loginPage': (context) => const LoginPage(),
+      'login': (context) => const LoginPage(),
       'activity': (context) => const Activity(),
       'profile': (context) => const ProfilePage(),
+      'settings': (context) => const UberSettingsPage(),
     },
   ));
 }

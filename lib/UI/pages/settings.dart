@@ -1,229 +1,167 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/UI/pages/ProfilePage.dart';
 
-class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+class UberSettingsPage extends StatefulWidget {
+  const UberSettingsPage({super.key});
+
   @override
-  // ignore: library_private_types_in_public_api
-  _SettingPage createState() => _SettingPage();
+  _UberSettingsPageState createState() => _UberSettingsPageState();
 }
 
-class _SettingPage extends State<SettingsPage> {
-  @override
-  void initState() {
-    //
-    super.initState();
-  }
-
+class _UberSettingsPageState extends State<UberSettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const ProfilePage()));
-        return false;
-      },
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: const Text(
-              "Account Settings",
-              style: TextStyle(
-                  fontStyle: FontStyle.italic, fontWeight: FontWeight.w600),
-            ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
           ),
-          body: Card(
-            elevation: 0,
-            margin:
-                const EdgeInsets.only(bottom: 5, left: 5, right: 5, top: 10),
-            child: SingleChildScrollView(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.98,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          radius: MediaQuery.of(context).size.width * 0.08,
-                          backgroundImage:
-                              const AssetImage("assets/images/user.png"),
-                          backgroundColor:
-                              const Color.fromARGB(255, 243, 243, 243),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text("Pritish singh"),
-                            Text("+91-8925743185")
-                          ],
-                        )
-                      ],
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 5),
-                      child: Text("Favorites"),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: const [
-                        Icon(Icons.home),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Add Home"),
-                      ],
-                    ),
-                    Row(
-                      children: const [
-                        Icon(Icons.work),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Add work"),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 5),
-                      child: Text(
-                        "More Saved places",
-                        style: TextStyle(color: Colors.lightBlueAccent),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 5, top: 5),
-                      child: Text("Trusted Contacts"),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      children: const [
-                        Icon(Icons.shield_outlined),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Manage Trusted Contacts"),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 5, top: 5),
-                      child: Text(
-                          "Share Your trip status with family and friends in a single tap"),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text("safety"),
-                        ),
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text(
-                              "Control your safety setting Including ride check notification"),
-                        )
-                      ],
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text("privacy"),
-                        ),
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text("Manage the data you share with us"),
-                        )
-                      ],
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text("Security"),
-                        ),
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text(
-                              "Control your account security with 2-step verification"),
-                        )
-                      ],
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Card(
-                          elevation: 0,
-                          margin: EdgeInsets.only(left: 10, bottom: 0, top: 5),
-                          color: Colors.white,
-                          child: Text("Sign out"),
-                        ),
-                      ],
-                    ),
-                  ],
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Setting",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
+
+            // build row of profile image and name and email
+            const SizedBox(height: 16),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage(
+                            'https://images.unsplash.com/photo-1600000000000-000000000000?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'),
+                      ),
+                      SizedBox(width: 16),
+                      Text(
+                        "Kiridharan K",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(width: 16),
+                  const Icon(Icons.edit),
+                ],
+              ),
+            ),
+
+            _buildSectionHeader('ACCOUNT'),
+            _buildAccountOption('Payment', Icons.payment),
+            _buildAccountOption('Promotions', Icons.card_giftcard),
+            _buildAccountOption('Wallet', Icons.account_balance_wallet),
+
+            _buildSectionHeader('SETTINGS'),
+            _buildOption('Notifications', Icons.notifications),
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0),
+              child: Divider(
+                height: 0,
+                thickness: 2,
+                indent: 2,
+              ),
+            ),
+            _buildOption('Privacy', Icons.privacy_tip),
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0),
+              child: Divider(
+                height: 0,
+                thickness: 2,
+                indent: 2,
+              ),
+            ),
+            _buildOption('Security', Icons.security),
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0),
+              child: Divider(
+                height: 0,
+                thickness: 2,
+                indent: 2,
+              ),
+            ),
+            _buildOption('Support', Icons.support),
+            const Divider(),
+            _buildSectionHeader('LOG OUT'),
+            _buildOption('Log Out', Icons.exit_to_app),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionHeader(String text) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 16,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildOption(String text, IconData icon) {
+    return SizedBox(
+      height: 70,
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(text),
+        trailing: const Icon(Icons.arrow_forward_ios),
+        onTap: () {},
+      ),
+    );
+  }
+
+  Widget _buildAccountOption(String text, IconData icon) {
+    return SizedBox(
+      height: 70,
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(text),
+        trailing: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.grey[200],
+          ),
+          child: Text(
+            'Edit',
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: 12,
+            ),
           ),
         ),
+        onTap: () {},
       ),
     );
   }
