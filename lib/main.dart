@@ -16,7 +16,7 @@ void main() {
       fontFamily: 'Nunito',
     ),
     // TODO - Add a login route in production .
-    initialRoute: 'navigation',
+    initialRoute: 'login',
     routes: {
       '/': (context) => const HomePage(),
       'navigation': (context) => const Navigation(),
