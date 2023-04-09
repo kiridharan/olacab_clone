@@ -130,33 +130,39 @@ class _UberSettingsPageState extends State<UberSettingsPage> {
   }
 
   Widget _buildOption(String text, IconData icon) {
-    return ListTile(
-      leading: Icon(icon),
-      title: Text(text),
-      trailing: const Icon(Icons.arrow_forward_ios),
-      onTap: () {},
+    return SizedBox(
+      height: 70,
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(text),
+        trailing: const Icon(Icons.arrow_forward_ios),
+        onTap: () {},
+      ),
     );
   }
 
   Widget _buildAccountOption(String text, IconData icon) {
-    return ListTile(
-      leading: Icon(icon),
-      title: Text(text),
-      trailing: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.grey[200],
-        ),
-        child: Text(
-          'Edit',
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 12,
+    return SizedBox(
+      height: 70,
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(text),
+        trailing: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.grey[200],
+          ),
+          child: Text(
+            'Edit',
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: 12,
+            ),
           ),
         ),
+        onTap: () {},
       ),
-      onTap: () {},
     );
   }
 }
