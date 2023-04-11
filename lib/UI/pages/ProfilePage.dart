@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:untitled/UI/components/profile/custom_list_widget_card.dart';
 import 'package:untitled/UI/components/profile/custom_top_part_profile.dart';
 import 'package:untitled/UI/components/profile/piechart_profile.dart';
+import 'package:untitled/UI/pages/trip_history.dart';
+import 'package:untitled/UI/pages/wallet_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -65,18 +68,33 @@ class _ProfilePage extends State<ProfilePage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    CardCus(
-                      "Help",
-                      Icon(Icons.help_outline_outlined),
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        // Get.toNamed("s");
+                      },
+                      child: const CardCus(
+                        "Help",
+                        Icon(Icons.help_outline_outlined),
+                      ),
                     ),
-                    CardCus(
-                      "Wallet",
-                      Icon(Icons.wallet),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const WalletPage());
+                      },
+                      child: const CardCus(
+                        "Wallet",
+                        Icon(Icons.wallet),
+                      ),
                     ),
-                    CardCus(
-                      "Trips",
-                      Icon(Icons.watch_later_rounded),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const UberTripHistoryPage());
+                      },
+                      child: const CardCus(
+                        "Trips",
+                        Icon(Icons.watch_later_rounded),
+                      ),
                     )
                   ],
                 ),
